@@ -18,27 +18,23 @@ int main ()
 
     while (MobJAtk==0 && MobJAtk < 10 )
     {
-        if (MobJAtk<10)
+        if (MobJAtk>10)
         {
             cout << "Votre score d'attaque est trop haut veuillez réitérer votre action \n";
         }
-        cout << " Choississez un score d'attaque entre 1 et 10 . \n";
+        cout << "Choississez un score d'attaque entre 1 et 10 . \n";
         cin >> MobJAtk;
     }
     while (MobJPv==0 && MobJPv < 10 )
     {
-        if (MobJPv<100)
+        if (MobJPv>100)
         {
             cout << "Votre nombre de Pv est trop haut veuillez réitérer votre action \n";
         }
-        cout << " Choississez un nombre de Pv entre 1 et 100 pour votre bisounours  . \n";
+        cout << "Choississez un nombre de Pv entre 1 et 100 pour votre bisounours  . \n";
         cin >> MobJPv;
     }
 
-    Monstre mobJoueur (MobJPv , MobJAtk , MobJName);
-    mobJoueur.AfficheStat();
-
-    
-
-
+    Monstre mobJoueur = Monstre(MobJPv,MobJAtk,MobJName);
+    //mobJoueur.AfficheStat();
 }

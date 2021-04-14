@@ -15,14 +15,12 @@ class Monstre {
         string nom ; 
     
     public :
-
+        Monstre();
+        Monstre(int pv,int atk,string nom);
         void AfficheStat();
         bool Mort ();
         int PertVie(int pvMob , int atkMob);
-        bool ChgmtEtat();
-        Monstre();
-        Monstre(int pv ,int atk ,string nom);
-        
+        bool ChgmtEtat();  
 };
 
 #endif
