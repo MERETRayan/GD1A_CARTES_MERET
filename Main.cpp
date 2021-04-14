@@ -54,13 +54,17 @@ int main ()
         }
         else if (choix == "1" || choix == "attaquer" || choix == "Attaquer")
         {
+            cout << "-------------------- \n ";
             mobEnnemi1.PerdVie(mobJoueur.Attaque(mobJoueur.getAtk(),mobEnnemi1.getPv()));
-            cout << "Vous attaquez et vous lui faites perdre " << MobJAtk << "Pv" << endl ;
+            cout << "Vous attaquez et vous lui faites perdre " << MobJAtk << " Pv" << endl ;
             cout << "Il reste " << mobEnnemi1.getPv() << "Pv a l'ennemi\n" ;
-            mobJoueur.PerdVie(mobEnnemi1.Attaque(mobEnnemi1.getAtk(),mobJoueur.getPv()));
-            cout << "Votre ennemi vous attaque et vous fait perdre" << mobEnnemi1.getAtk() << endl ;
-            cout << "Il vous reste " << mobJoueur.getPv() << " Pv \n" ;
-
+            if (mobEnnemi1.getPv()>0)
+            {
+                mobJoueur.PerdVie(mobEnnemi1.Attaque(mobEnnemi1.getAtk(),mobJoueur.getPv()));
+                cout << "Votre ennemi vous attaque et vous fait perdre " << mobEnnemi1.getAtk() << " Pv" << endl ;
+                cout << "Il vous reste " << mobJoueur.getPv() << " Pv \n" ;
+            }
+            cout << "-------------------- \n ";
         }
         else if (choix == "2" || choix == "VoirStats" || choix == "soirstats" )
         {
@@ -71,5 +75,14 @@ int main ()
             cout << "Votre choix n'existe pas. \n";
         }
 
+    }
+
+    if (mobJoueur.getPv()==0)
+    {
+        cout << "Vous avez perdu contre votre Ennemi \n";
+    }
+    if (mobEnnemi1.getPv()==0)
+    {
+        cout << "Vous avez gagnez mais la prochaine fois Essayer d'être amis parce que tout est mignon dans le monde des Bisounous =)\n";
     }
 }

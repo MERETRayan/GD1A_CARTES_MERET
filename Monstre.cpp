@@ -11,7 +11,7 @@ Monstre::Monstre(int atk, int pv, string name ) : attack(atk), pointDeVie(pv) , 
 int Monstre::Attaque(int atkMob , int pvMob)
 {
     pvMob = pvMob - atkMob ;
-    if (pvMob > 0 )
+    if (pvMob < 0 )
     {
         pvMob = 0 ;
     }
