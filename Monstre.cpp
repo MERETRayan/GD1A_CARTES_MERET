@@ -6,7 +6,9 @@
 
 using namespace std ;
 
-int Monstre::PertVie(int atkMob , int pvMob)
+Monstre::Monstre(int atk, int pv, string name ) : attack(atk), pointDeVie(pv) , nom(name) {}
+
+int Monstre::Attaque(int atkMob , int pvMob)
 {
     pvMob = pvMob - atkMob ;
     if (pvMob > 0 )
@@ -18,16 +20,17 @@ int Monstre::PertVie(int atkMob , int pvMob)
 
 void Monstre::AfficheStat()
 {
-    cout << nom << " \n";
     cout << "-------------------- \n ";
-    cout << pv << " Pv \n";
+    cout << nom << " \n";
+    cout << pointDeVie << " : Pv \n";
     cout << attack << " : Attack \n";
     cout << etat << " : Etat  \n";
+    cout << "-------------------- \n ";
 }
 
 bool Monstre::Mort()
 {
-    return pv==0;
+    return pointDeVie == 0;
 }
 
 bool Monstre::ChgmtEtat()
@@ -35,7 +38,7 @@ bool Monstre::ChgmtEtat()
     etat2 != etat2 ; 
     if (etat2)
     {
-        etat = "epuiser";
+        etat = "Epuiser";
     }
     if (!etat2)
     {
@@ -44,6 +47,18 @@ bool Monstre::ChgmtEtat()
 return etat2 ; 
 }
 
+int Monstre::getPv()
+{
+    return pointDeVie;
+}
+int Monstre::getAtk()
+{
+    return attack;
+}
+void Monstre::PerdVie(int pvPerdu)
+{
+    pointDeVie = pvPerdu;
+}
 
 
 #endif

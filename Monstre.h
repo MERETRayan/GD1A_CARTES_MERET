@@ -5,21 +5,24 @@
 
 using namespace std ;
 
-class Monstre {
+class Monstre{
     private : 
 
-        int pv = 0 ;
+        int pointDeVie = 0 ;
         int attack = 0;
-        string etat = "Epuisé" ;
+        string etat = "en Forme" ;
         bool etat2 = false ;
         string nom ; 
     
     public :
         Monstre();
-        Monstre(int pv,int atk,string nom);
+        Monstre(int pv,int atk,string name);
         void AfficheStat();
         bool Mort ();
-        int PertVie(int pvMob , int atkMob);
+        void PerdVie(int pvPerdu);
+        int getPv();
+        int getAtk();
+        int Attaque(int pvMob , int atkMob);
         bool ChgmtEtat();  
 };
 
