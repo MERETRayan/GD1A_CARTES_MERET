@@ -1,8 +1,6 @@
 #ifndef MONSTRE_H
 #define MONSTRE_H
 
-
-
 #include <string>
 
 using namespace std ;
